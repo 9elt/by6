@@ -4,7 +4,7 @@
  */
 function bysix(bytes, pxsize = 4, aprox = 1) {
     const inc = pxsize * aprox;
-    const len = bytes.length / inc;
+    const len = bytes.length;
     const tot = len / inc;
     const map = new Uint32Array(256).fill(0);
     for (let i = 0; i < len; i += inc) {
