@@ -2,7 +2,7 @@
  * @param {Uint8ClampedArray} bytes 
  * @returns {{ code: number; area: number; bytes: Uint8ClampedArray; }[]}
  */
-function bysix(bytes, pxsize = 4, aprox = 1) {
+function by6(bytes, pxsize = 4, aprox = 1) {
     const inc = pxsize * aprox;
     const len = bytes.length;
     const tot = len / inc;
