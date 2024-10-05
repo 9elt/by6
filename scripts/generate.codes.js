@@ -1,7 +1,10 @@
-const size = 64;
-const fontSize = 16;
+const size = 48;
+const fontSize = 12;
 
-let svg = '<svg xmlns="http://www.w3.org/2000/svg" width="256" height="1024">';
+const width = 16 * size;
+const height = 4 * size;
+
+let svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">`;
 
 for (let i = 0; i < 64; i++) {
     const r = ((i & 0b00110000) >> 4) * 85;
@@ -10,8 +13,8 @@ for (let i = 0; i < 64; i++) {
 
     const isDark = r * 0.299 + g * 0.587 + b * 0.114 < 128;
 
-    const x = (i % 4) * size;
-    const y = (i >> 2) * size;
+    const x = (i % 16) * size;
+    const y = Math.floor(i / 16) * size;
     svg += `<rect x="${x}" y="${y}" width="${size}" height="${size}" fill="rgb(${r}, ${g}, ${b})"/>`;
 
     const color = isDark ? "#ffffff" : "#000000";
